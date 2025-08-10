@@ -13,9 +13,8 @@ class BlackButton extends StatelessWidget {
     return InkWell(
       onTap: ontap,
       child: Container(
-
-        margin: EdgeInsets.symmetric(horizontal: 30),
-        height: 60,
+        height: 52,
+        width: 335,
         decoration: BoxDecoration(
           boxShadow: [
           ],

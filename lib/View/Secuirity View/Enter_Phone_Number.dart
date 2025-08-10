@@ -71,11 +71,10 @@
 //   }
 // }
 
-
-
 import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:mafi_mushkil/App%20Colors/App_Colors.dart';
+import 'package:mafi_mushkil/Components/Black_Button.dart';
 import 'package:mafi_mushkil/Components/TextWidget.dart';
 
 
@@ -100,25 +99,30 @@ class EnterPhoneNumber extends StatelessWidget {
           'Enter your phone number\n          for verification',
           fontSize: 20,
           fontWeight: FontWeight.w600,),
-          TextWidget(text: 'Phone Number'),
+        SizedBox(height: 20,),
         Row(
           children: [
-            CountryCodePicker(
-              onChanged: (country) {
-                print('Country coCde selected: ${country.code}');
-              },
-              initialSelection: 'US',
-              showFlag: true,
-              showDropDownButton: true,
-              padding: EdgeInsets.symmetric(horizontal: 8.0),
+            Column(
+              children: [
+                TextWidget(text: 'Phone Number',
+                  fontWeight: FontWeight.w400,
+                fontSize: 14,),
+                CountryCodePicker(
+                  onChanged: (country) {
+                    print('Country code selected: ${country.code}');
+                  },
+                  initialSelection: 'US',
+                  showFlag: true,
+                  showDropDownButton: true,
+                  padding: EdgeInsets.symmetric(horizontal: 8.0),
+                ),
+                SizedBox(height: 25,),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: BlackButton(buttontext: 'Verify', ontap: (){}),
+                )
+              ],
             ),
-            TextFormField(
-              decoration: InputDecoration(
-                hintText: 'Enter phone number',hintStyle: TextStyle(color:
-              AppColors.BlackColor,
-              ),border: InputBorder.none
-              ),
-            )
           ],
         ),
         ],
