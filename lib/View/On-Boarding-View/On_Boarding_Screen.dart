@@ -111,8 +111,10 @@
 // }
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:mafi_mushkil/App%20Colors/App_Colors.dart';
 import 'package:mafi_mushkil/Components/Black_Button.dart';
+import 'package:mafi_mushkil/Components/Next_Button.dart';
 import 'package:mafi_mushkil/View/On-Boarding-View/On_Boarding_Column.dart';
 import 'package:mafi_mushkil/View/Welcome_Screen.dart';
 
@@ -140,13 +142,11 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
           : Row(
         children: [
           const SizedBox(width: 36),
-          BlackButton(buttontext: 'Skip', ontap:(){
-            pageController.jumpToPage(2);
-            setState(() {
-              index=2;
-            });
-          }),
-          const SizedBox(width: 80),
+          TextButton(onPressed: (){}, child: Text('Skip',style: GoogleFonts.robotoFlex(
+            fontWeight: FontWeight.w400,
+            fontSize: 17,color: AppColors.BlackColor
+          ),)),
+          const SizedBox(width: 60),
           CircleAvatar(
             backgroundColor: index == 0
                 ? AppColors.BlackColor
@@ -167,8 +167,8 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 : AppColors.LightGreenbg,
             radius: 5,
           ),
-          const SizedBox(width: 40),
-          BlackButton(
+          const SizedBox(width: 55),
+          NextButton(
             buttontext: 'Next',
             ontap: () {
               if (index < 2)  {
