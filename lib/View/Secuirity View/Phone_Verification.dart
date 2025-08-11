@@ -62,6 +62,8 @@ class PhoneVerification extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
+
       body: Column(
 
         children: [
@@ -80,6 +82,11 @@ class PhoneVerification extends StatelessWidget {
           TextWidget(text: 'A verification code has been sent\n     to +92 3184665633 via SMS.',
             fontWeight: FontWeight.w400,
           fontSize: 14,),
+          TextFormField(
+            decoration: InputDecoration(
+              hintText: 'Text'
+            ),
+          ),
           SizedBox(height: 100,),
           BlackButton(buttontext: 'Verify', ontap: (){})
     ],
